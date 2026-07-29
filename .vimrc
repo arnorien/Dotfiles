@@ -26,6 +26,7 @@ syntax on
 set relativenumber
 set number
 set showmatch
+set encoding=utf-8
 
 " Activation du thème
 set termguicolors
