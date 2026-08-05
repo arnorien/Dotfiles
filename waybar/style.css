@@ -1,0 +1,164 @@
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+
+* {
+  font-family: FontAwesome;
+  font-size: 12px;
+  min-height: 0;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 0px;
+}
+
+button {
+  background: transparent;
+}
+
+/* ============================================================
+   CONTENEUR PRINCIPAL
+   ============================================================ */
+
+#waybar {
+  background: transparent;
+  color: #c6d0f5;
+}
+
+/* ============================================================
+   WORKSPACES
+   ============================================================ */
+
+#workspaces {
+  border-radius: 5px;
+  margin: 5px;
+  background: #101010;
+}
+
+#workspaces button {
+  color: #8caaee;
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+/* ============================================================
+   STYLE "PILULE" COMMUN À LA PLUPART DES MODULES
+   (fond sombre + padding + marges verticales identiques)
+   ============================================================ */
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#custom-lock,
+#custom-power,
+#custom-weather,
+#custom-uptime,
+#custom-docker,
+#custom-idle-inhibit {
+  background-color: #101010;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+/* ============================================================
+   TITRE DE FENÊTRE
+   ============================================================ */
+
+#window {
+  padding: 0.5rem 1rem;
+  margin: 5px;
+  color: #8caaee;
+  font-family: FontAwesome;
+  background-color: #101010;
+  border-radius: 5px;
+}
+
+/* Pas de fond quand aucune fenêtre n'est ouverte sur le workspace. */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* ============================================================
+   COULEURS / DÉTAILS PAR MODULE
+   ============================================================ */
+
+#clock {
+  color: #8caaee;
+  border-radius: 5px;
+}
+
+#custom-weather {
+  color: #8caaee;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+#custom-music {
+  color: #ca9ee6;
+  border-radius: 5px;
+}
+
+#backlight {
+  color: #e5c890;
+}
+
+/* backlight et battery n'ont pas de coins arrondis, contrairement
+   aux autres modules de la liste ci-dessus. */
+#backlight,
+#battery {
+  border-radius: 0;
+}
+
+/* Batterie : vert par défaut (et en charge), rouge en dessous des
+   seuils "warning"/"critical" définis dans config.jsonc. */
+#battery {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  color: #e78284;
+}
+
+/* État anti-veille (module custom/idle-inhibit, à gauche de l'horloge) :
+   rouge quand la veille est bloquée, bleu (couleur neutre du thème) sinon. */
+#custom-idle-inhibit {
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+#custom-idle-inhibit.active {
+  color: #e78284;
+}
+
+#custom-idle-inhibit.inactive {
+  color: #8caaee;
+}
+
+/* ============================================================
+   PULSEAUDIO / POWER — forment une "pilule" arrondie uniquement
+   sur leurs bords extérieurs (gauche pour pulseaudio, droite pour
+   power). Note : ils ne sont actuellement pas adjacents dans
+   modules-right (config.jsonc), donc l'effet pilule visuel entre
+   les deux n'est pas visible tel quel.
+   ============================================================ */
+
+#pulseaudio {
+  color: #ea999c;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#custom-power {
+  border-radius: 0px 5px 5px 0px;
+  color: #e78284;
+}

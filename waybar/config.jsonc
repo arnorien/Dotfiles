@@ -1,0 +1,169 @@
+{
+  // ============================================================
+  // WAYBAR — config generale
+  // ============================================================
+  "layer": "top",
+  "position": "top",
+
+  // ------------------------------------------------------------
+  // Disposition de la barre : quel module va a gauche / centre / droite.
+  // L'ordre dans ces listes = ordre d'affichage a l'ecran.
+  // NOTE : "custom/weather" est liste ici mais n'a aucun bloc de
+  // configuration plus bas dans ce fichier -> le module ne s'affichera
+  // pas correctement tant qu'il n'est pas defini (voir section
+  // correspondante).
+  // ------------------------------------------------------------
+  "modules-left": ["custom/idle-inhibit", "clock", "custom/weather", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "pulseaudio",
+    "custom/uptime",
+    "backlight",
+    "battery",
+    "network",
+    "cpu",
+    "memory",
+    "tray",
+    "custom/power"
+  ],
+
+  // ============================================================
+  // MODULES-LEFT
+  // ============================================================
+
+  // Bascule le verrou anti-veille (voir hypridle.conf / script
+  // toggle-idle-inhibit.sh). "interval": "once" + "signal": 8 =
+  // le module ne se rafraichit que sur demande (pkill -RTMIN+8 waybar),
+  // pas de polling.
+  "custom/idle-inhibit": {
+    "exec": "if [ -f $HOME/.cache/hypridle_inhibit.lock ]; then echo '{\"text\":\"󰛊\",\"class\":\"active\",\"tooltip\":\"Veille desactivee - cliquer pour reactiver\"}'; else echo '{\"text\":\"󰾪\",\"class\":\"inactive\",\"tooltip\":\"Veille activee - cliquer pour desactiver\"}'; fi",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "~/.config/hypr/scripts/toggle-idle-inhibit.sh",
+    "tooltip": true
+  },
+
+  "clock": {
+    "timezone": "Europe/Paris",
+    "format": "{:%d/%m/%Y - %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1
+  },
+
+  // "custom/weather" est reference dans modules-left mais n'a pas de
+  // bloc de config ici : a ajouter, par exemple avec wttrbar ou un
+  // script perso retournant du JSON ({"text":...,"tooltip":...}).
+  // "custom/weather": { ... },
+
+  // "hyprland/window" (titre de la fenetre active) n'a pas de config
+  // specifique : il utilise les valeurs par defaut de Waybar.
+
+  // ============================================================
+  // MODULES-CENTER
+  // ============================================================
+
+  "hyprland/workspaces": {
+    "format": "{name} {icon}",
+    "show-special": true,
+    "format-icons": {
+      "active": "󱓻",
+      "default": "󱓼"
+    }
+  },
+
+  // ============================================================
+  // MODULES-RIGHT
+  // ============================================================
+
+  "pulseaudio": {
+    // "scroll-step": 1, // %, peut etre un flottant
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "custom/uptime": {
+    "format": "{}",
+    "interval": 60,
+    "exec": "sh -c '(uptime -p)'"
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-full": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "{bandwidthDownBits} 󰤢 ",
+    "format-ethernet": "{bandwidthDownBits} 󰈀",
+    "format-disconnected": "No Network 󰖪 ",
+    "interval": 5,
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}%  ",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G  "
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "hyprlock",
+    "format": "⏻"
+  }
+
+  // ============================================================
+  // MODULES DEFINIS MAIS NON UTILISES
+  // (pas dans modules-left/center/right -> ne s'affichent pas)
+  // Garde ici au cas ou tu voudrais les activer un jour.
+  // ============================================================
+
+  // "custom/music": {
+  //   "format": "  {}",
+  //   "escape": true,
+  //   "interval": 5,
+  //   "tooltip": false,
+  //   "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+  //   "on-click": "playerctl play-pause",
+  //   "max-length": 50
+  // }
+}
