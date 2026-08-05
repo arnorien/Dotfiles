@@ -9,3 +9,5 @@ This is my configuration of the Hyprland ecosystem :
 - Hypridle (to manage the suspend in case of inactivity)
 - Hyprlock (simplest lock screen possible)
 - Hyprpaper (to manage randomization of wallpapers -> in the dedicated directory)
+## waybar
+A pretty simple one.
