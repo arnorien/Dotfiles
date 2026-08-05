@@ -41,7 +41,7 @@ hl.monitor({
 local terminal = "kitty"
 local fileManager = "nemo"
 local browser = "firefox"
-local menurun = "rofi -show combi -modes combi -combi-modes 'windows,drun,run' -display-combi ' '"
+local menurun = "pkill rofi || rofi -show combi -modes combi -combi-modes 'windows,drun,run' -display-combi ' '"
 
 -- Screenshot d'une zone sélectionnée (grim + slurp), enregistré en JPEG horodaté.
 local take_a_screenshot =
