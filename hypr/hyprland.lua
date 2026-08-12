@@ -292,7 +292,8 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close()) -- fer
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" })) -- flottant on/off
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- mode pseudo (dwindle)
-hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit")) -- inverser le split (dwindle uniquement)
+hl.bind(mainMod .. " + I", hl.dsp.layout("togglesplit")) -- inverser le split (dwindle uniquement)
+hl.bind(mainMod .. " + O", hl.dsp.layout("swapsplit")) -- inverser les fenêtres (dwindle uniquement)
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })) -- plein écran
 
 -- Déplacer le focus avec mainMod + flèches (HJKL, style Vim)
