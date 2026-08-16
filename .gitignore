@@ -1,0 +1,19 @@
+# Instructions locales pour Claude Code
+CLAUDE.md
+
+# Fichiers temporaires d'éditeurs (Vim/Neovim)
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs et fichiers locaux éventuels
+*.log
+
+# État local de Hyprland/Waybar (verrous, sockets générés à l'exécution)
+hypr/scripts/*.lock
