@@ -41,7 +41,8 @@ hl.monitor({
 local terminal = "kitty"
 local fileManager = "nemo"
 local browser = "firefox"
-local menurun = "pkill rofi || rofi -show combi -modes combi -combi-modes 'windows,drun,run' -display-combi ' '"
+local menurun = "pkill rofi || rofi -show combi" -- lanceur (fenêtres/apps/commandes), config dans ~/.config/rofi
+local rofiClipboard = "pkill rofi || rofi -show clipboard -modi clipboard:" .. os.getenv("HOME") .. "/.config/rofi/scripts/clipboard.sh" -- historique du presse-papiers (cliphist)
 
 -- Screenshot d'une zone sélectionnée (grim + slurp), enregistré en JPEG horodaté.
 local take_a_screenshot =
@@ -285,6 +286,7 @@ hl.bind(mainMod .. " + return ", hl.dsp.exec_cmd(terminal)) -- ouvrir le termina
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- ouvrir le gestionnaire de fichiers
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser)) -- ouvrir le navigateur
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menurun)) -- lanceur d'applications (rofi)
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(rofiClipboard)) -- historique du presse-papiers (rofi + cliphist)
 
 -- ---- Fenêtres ----
 

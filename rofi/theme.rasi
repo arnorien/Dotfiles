@@ -1,0 +1,98 @@
+/**
+ * Thème Rofi — reprend la palette déjà utilisée dans waybar/style.css
+ * (fond #101010, accent bleu #8caaee, texte #c6d0f5) pour rester cohérent
+ * visuellement avec la barre de statut.
+ */
+
+* {
+	bg:             #101010;
+	bg-alt:         #1a1a1ae6;
+	fg:             #c6d0f5;
+	fg-dim:         #6c7086;
+	accent:         #8caaee;
+	fg-selected:    #101010;
+	border:         #414559;
+
+	background-color: transparent;
+	text-color:        @fg;
+}
+
+window {
+	location:       center;
+	width:          32%;
+	border-radius:  12px;
+	background-color: @bg;
+	border:         2px;
+	border-color:   @accent;
+	padding:        14px;
+}
+
+mainbox {
+	background-color: transparent;
+	children:       [ inputbar, listview ];
+	spacing:        10px;
+}
+
+inputbar {
+	background-color: @bg-alt;
+	border-radius:  8px;
+	padding:        10px 12px;
+	spacing:        8px;
+	children:       [ prompt, entry ];
+}
+
+prompt {
+	text-color:     @accent;
+	font:           "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+	placeholder:       "Rechercher…";
+	placeholder-color: @fg-dim;
+	text-color:        @fg;
+}
+
+listview {
+	lines:          8;
+	columns:        1;
+	spacing:        4px;
+	background-color: transparent;
+	scrollbar:      false;
+	fixed-height:   false;
+}
+
+element {
+	padding:        8px 10px;
+	border-radius:  8px;
+	background-color: transparent;
+	text-color:     @fg;
+}
+
+element-icon {
+	size:           22px;
+	padding:        0 10px 0 0;
+}
+
+element-text {
+	vertical-align: 0.5;
+}
+
+element selected {
+	background-color: @accent;
+	text-color:        @fg-selected;
+}
+
+element selected element-icon {
+	text-color:     @fg-selected;
+}
+
+message {
+	background-color: @bg-alt;
+	border-radius:  8px;
+	padding:        8px;
+}
+
+error-message {
+	background-color: @bg;
+	text-color:     #e78284;
+}

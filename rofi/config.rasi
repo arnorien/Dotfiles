@@ -1,0 +1,21 @@
+/**
+ * Config Rofi — lanceur (fenêtres/applications/commandes) + presse-papiers.
+ * Le mode "combi" fusionne plusieurs listes ; les noms de mode doivent
+ * correspondre exactement aux modi internes de rofi (window, drun, run…) —
+ * une faute de frappe (ex: "windows") fait échouer silencieusement ce mode.
+ */
+configuration {
+	modi:                          "combi,clipboard:~/.config/rofi/scripts/clipboard.sh";
+	combi-modes:                   "window,drun,run";
+	display-combi:                 " Apps";
+	display-window:                "󰖯 Fenêtres";
+	display-drun:                  " Apps";
+	display-run:                   " Commandes";
+	display-clipboard:             "󰅍 Presse-papiers";
+	show-icons:                    true;
+	icon-theme:                    "Adwaita";
+	font:                          "JetBrainsMono Nerd Font 11";
+	drun-display-format:           "{name}";
+}
+
+@theme "theme.rasi"
