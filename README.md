@@ -11,3 +11,5 @@ This is my configuration of the Hyprland ecosystem :
 - Hyprpaper (to manage randomization of wallpapers -> in the dedicated directory)
 ## waybar
 A pretty simple one.
+## rofi
+App launcher (windows/apps/run combi mode) and clipboard history (via cliphist), themed to match waybar's color palette. Bound to `SUPER+space` and `SUPER+Shift+V` in the Hyprland config.
