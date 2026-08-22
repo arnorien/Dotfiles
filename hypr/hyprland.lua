@@ -42,7 +42,9 @@ local terminal = "kitty"
 local fileManager = "nemo"
 local browser = "firefox"
 local menurun = "pkill rofi || rofi -show combi" -- lanceur (fenêtres/apps/commandes), config dans ~/.config/rofi
-local rofiClipboard = "pkill rofi || rofi -show clipboard -modi clipboard:" .. os.getenv("HOME") .. "/.config/rofi/scripts/clipboard.sh" -- historique du presse-papiers (cliphist)
+local rofiClipboard = "pkill rofi || rofi -show clipboard -modi clipboard:"
+	.. os.getenv("HOME")
+	.. "/.config/rofi/scripts/clipboard.sh" -- historique du presse-papiers (cliphist)
 
 -- Screenshot d'une zone sélectionnée (grim + slurp), enregistré en JPEG horodaté.
 local take_a_screenshot =
@@ -124,7 +126,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 0,
 		rounding_power = 2.0,
 
 		active_opacity = 1.0,
