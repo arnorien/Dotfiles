@@ -17,3 +17,6 @@ Thumbs.db
 
 # État local de Hyprland/Waybar (verrous, sockets générés à l'exécution)
 hypr/scripts/*.lock
+
+# Aide mémoire pour la maintenance du système
+maintenance_systeme.md
