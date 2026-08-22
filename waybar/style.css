@@ -21,7 +21,7 @@ button {
 
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: #ebdbb2;
 }
 
 /* ============================================================
@@ -31,11 +31,11 @@ button {
 #workspaces {
   border-radius: 5px;
   margin: 5px;
-  background: #101010;
+  background: #1d2021;
 }
 
 #workspaces button {
-  color: #8caaee;
+  color: #fe8019;
   border-radius: 5px;
   padding: 0.4rem;
 }
@@ -65,7 +65,7 @@ button {
 #custom-uptime,
 #custom-docker,
 #custom-idle-inhibit {
-  background-color: #101010;
+  background-color: #1d2021;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
@@ -77,9 +77,9 @@ button {
 #window {
   padding: 0.5rem 1rem;
   margin: 5px;
-  color: #8caaee;
+  color: #fe8019;
   font-family: FontAwesome;
-  background-color: #101010;
+  background-color: #1d2021;
   border-radius: 5px;
 }
 
@@ -93,23 +93,23 @@ window#waybar.empty #window {
    ============================================================ */
 
 #clock {
-  color: #8caaee;
+  color: #fe8019;
   border-radius: 5px;
 }
 
 #custom-weather {
-  color: #8caaee;
+  color: #fe8019;
   margin-left: 0.5rem;
   border-radius: 5px;
 }
 
 #custom-music {
-  color: #ca9ee6;
+  color: #d3869b;
   border-radius: 5px;
 }
 
 #backlight {
-  color: #e5c890;
+  color: #fabd2f;
 }
 
 /* backlight et battery n'ont pas de coins arrondis, contrairement
@@ -122,12 +122,12 @@ window#waybar.empty #window {
 /* Batterie : vert par défaut (et en charge), rouge en dessous des
    seuils "warning"/"critical" définis dans config.jsonc. */
 #battery {
-  color: #a6d189;
+  color: #b8bb26;
 }
 
 #battery.warning:not(.charging),
 #battery.critical:not(.charging) {
-  color: #e78284;
+  color: #fb4934;
 }
 
 /* État anti-veille (module custom/idle-inhibit, à gauche de l'horloge) :
@@ -138,11 +138,11 @@ window#waybar.empty #window {
 }
 
 #custom-idle-inhibit.active {
-  color: #e78284;
+  color: #fb4934;
 }
 
 #custom-idle-inhibit.inactive {
-  color: #8caaee;
+  color: #fe8019;
 }
 
 /* ============================================================
@@ -154,11 +154,11 @@ window#waybar.empty #window {
    ============================================================ */
 
 #pulseaudio {
-  color: #ea999c;
+  color: #8ec07c;
   border-radius: 5px 0px 0px 5px;
 }
 
 #custom-power {
   border-radius: 0px 5px 5px 0px;
-  color: #e78284;
+  color: #fb4934;
 }

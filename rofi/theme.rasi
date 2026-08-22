@@ -1,17 +1,17 @@
 /**
- * Thème Rofi — reprend la palette déjà utilisée dans waybar/style.css
- * (fond #101010, accent bleu #8caaee, texte #c6d0f5) pour rester cohérent
+ * Thème Rofi — reprend la palette Gruvbox déjà utilisée dans waybar/style.css
+ * (fond #1d2021, accent orange #fe8019, texte #ebdbb2) pour rester cohérent
  * visuellement avec la barre de statut.
  */
 
 * {
-	bg:             #101010;
-	bg-alt:         #1a1a1ae6;
-	fg:             #c6d0f5;
-	fg-dim:         #6c7086;
-	accent:         #8caaee;
-	fg-selected:    #101010;
-	border:         #414559;
+	bg:             #1d2021;
+	bg-alt:         #3c3836e6;
+	fg:             #ebdbb2;
+	fg-dim:         #928374;
+	accent:         #fe8019;
+	fg-selected:    #1d2021;
+	border:         #665c54;
 
 	background-color: transparent;
 	text-color:        @fg;
@@ -94,5 +94,5 @@ message {
 
 error-message {
 	background-color: @bg;
-	text-color:     #e78284;
+	text-color:     #fb4934;
 }
